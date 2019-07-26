@@ -1,0 +1,253 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome";
+
+@font-face {
+  font-family: 'Blaak';
+  src: url('BlaakBlack_PERSONAL.ttf') format('truetype');
+  src: url('BlaakBlackItalic_PERSONAL.ttf') format('truetype');
+  src: url('BlaakBold_PERSONAL.ttf') format('truetype');
+  src: url('BlaakBoldItalic_PERSONAL.ttf') format('truetype');
+  src: url('BlaakExtraBold_PERSONAL.ttf') format('truetype');
+  src: url('BlaakExtraBoldItalic_PERSONAL.ttf') format('truetype');
+  src: url('BlaakLight_PERSONAL.ttf') format('truetype');
+  src: url('BlaakLightItalic_PERSONAL.ttf') format('truetype');
+  src: url('BlaakRegular_PERSONAL.ttf') format('truetype');
+  src: url('BlaakRegularItalic_PERSONAL.ttf') format('truetype');
+  src: url('BlaakThin_PERSONAL.ttf') format('truetype');
+  src: url('BlaakThinItalic_PERSONAL.ttf') format('truetype');
+
+}
+
+
+@font-face {
+  font-family: 'BlaakBlack';
+  src: url('BlaakBlack_PERSONAL.ttf') format('truetype');
+}
+
+html, body {
+  height: 100%;
+
+}
+
+@media (min-width: 768px) {
+    .container-small {
+        width: 300px;
+    }
+    .container-medium {
+        width: 680px;
+    }
+}
+@media (min-width: 992px) {
+    .container-small {
+        width: 500px;
+    }
+    .container-medium {
+        width: 680px;
+    }
+}
+@media (min-width: 1200px) {
+    .container-small {
+        width: 700px;
+    }
+    .container-medium {
+        width: 680px;
+    }
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;
+}
+
+.slogan {
+  font-size: 32px;
+  font-weight: 800 !important;
+  text-align: center;
+  line-height: 40px;
+
+}
+
+.jumbotron {
+    padding: 2rem 2rem !important;
+}
+
+.text-000 a {
+    color: #000;
+  }
+
+.text-ccc a {
+      color: #ccc;
+  }
+
+.fff {
+    color: #fff;
+  }
+
+.fw700 {
+    font-weight: 700 !important;
+    line-height: 2;
+  }
+
+
+.login {
+    padding-bottom: 3em;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 350px;
+  }
+
+
+.login-container {
+      max-width: 100%;
+      margin: 0 auto;
+      border-radius: 20px;
+      width: 650px;
+      margin-left: 4em !important;
+
+  }
+
+.soapbox-btn a {
+      color: #09009f;
+      border-color: #09009f;
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: transparent;
+      border: 1px solid;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+.soapbox-btn:hover a {
+        color: #fff;
+        background-color: #09009f;
+        border-color: #09009f;
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.soapbox-link a {
+      color: #09009f;
+    }
+
+.container-small, .container-medium {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.post-box {
+  background-color:#fff !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.post-data {
+  width: 300px;
+  height: 60px;
+  padding: 0rem 1rem;
+}
+
+.postbyline {
+  font-size: 13px;
+}
+
+.soapbox {
+  font-family: 'BlaakBlack';
+  font-size: 26px;
+  color: #000;
+}
+
+.avatar {
+  object-fit: cover;
+  object-position: center;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+
+}
+
+
+.avatar-sm {
+  object-fit: cover;
+  object-position: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.avatar-sm-color {
+  object-fit: cover;
+  object-position: center;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #09009f, #00ff95 90%);
+  padding: 3px;
+}
+
+
+.navbar-sh {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+.nav-icon {
+  font-size: 1.5em;
+  line-height: 2em;
+  padding: 0px 12px 0px 12px;
+}
+
+.themed-grid-col {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.body-text {
+    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 18px;
+}
+
+.headline {
+  font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.style_image {
+  margin-top: 20px;
+}

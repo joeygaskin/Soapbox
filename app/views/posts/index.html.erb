@@ -1,0 +1,63 @@
+<div class="mt-4 container-medium">
+<div class="mt-5 container">
+  <div class="row mb-3">
+    <div class="col-md-8 themed-grid-col pl-0 pb-0">
+      <h1><%= current_user.name %></h1>
+      <p>
+      <%= current_user.bio %>
+      <p class="text-dark"><strong><%= fa_icon "user" %></strong> <%= current_user.username %>
+      <p style="font-size: 1.3em;">
+      <%= fa_icon "facebook-f" %>
+      <%= (fa_icon "instagram", class:"pl-2") %>
+      <%= (fa_icon "twitter", class:"pl-2")%>
+    </p>
+    </div>
+    <div class="col-md-4 themed-grid-col">
+      <% if current_user.avatar.attached? %>
+      <%= image_tag(current_user.avatar, class: "avatar") %>
+      <br>
+      <% else %>
+      
+      <% end %>
+    </div>
+  </div>
+</div>
+<hr>
+<h6>Latest</h6>
+<% if current_user.posts.present? %>
+  <% current_user.posts.each do |post| %>
+    <div class="jumbotron post-box">
+      <div class="post-data row mb-3 postbyline ">
+        <div class="">
+      <%= image_tag(current_user.avatar, class:"avatar-sm") %>
+        </div>
+        <div class="ml-3">
+          <%= current_user.name %>
+          <p>
+          <%= post.created_at.strftime("%B %d, %Y") %>
+        </div>
+      </div>
+      <h3 class="text-000"><%= link_to (post.title), post_path(current_user.username, post) %></h3>
+      <p class="body-text">
+        <% if post.body.length > 150 %>
+        <%= truncate(post.body, length: 150) %>
+        <%= link_to 'Read more', post_path(current_user.username, post), class: "read-more-" %>
+        <script>
+          $('.read-more-<%= post_path(current_user.username, post) %>').on('click', function(e) {
+              e.preventDefault()
+                $(this).parent().html('<%= escape_javascript post_path(current_user.username, post) %>')
+              })
+            </script>
+            </p>
+        <% else %>
+            <%= post.body %>
+
+          <% end %>
+      </div>
+
+      <% end %>
+
+      <% else %>
+      Create your first post.
+      <% end %>
+</div>

@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :username %>
+    <%= f.input :bio %>
+    <div class="">
+    <%= f.label "Profile Photo" %>
+    <p>
+    <%= f.file_field :avatar %>
+  </div>
+    <%= f.input :email %>
+    <%= f.input :password %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button(:submit, "Create Account", :class => 'btn btn-lg btn-primary btn-block')%>
+  </div>
+<% end %>

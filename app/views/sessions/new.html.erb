@@ -1,0 +1,35 @@
+<section>
+<div style="float: left; margin-left:150px; margin-top: 60px; width: 400px;">
+  <p class="slogan">
+    Find your Soapbox. Stand up and tell the world!
+  </p>
+  <p id="alert">
+    <%= alert %>
+  </p>
+  <h6  style="text-align: center; font-weight: font-style: italic;
+    font-family: Blaak;
+    padding-bottom: 18px;">
+    Sign in and create a blog to tell your story.
+  </h6>
+    <%= form_tag sessions_path do |form| %>
+    <div class="login">
+        <p>
+      <div class="field">
+        <%= label_tag :email, "Email", class: '000 fw700 h6' %>
+        <%= text_field_tag :email, "", class: 'form-control'%>
+      </div>
+      <div class="field">
+        <%= label_tag :password, "Password", class: '000 fw700 h6' %>
+        <%= password_field_tag :password, "", class: 'form-control' %>
+      </div>
+      <p>
+      <div class="actions">
+        <%= submit_tag "Sign in", class: "btn btn-lg btn-primary btn-block" %>
+      </div>
+    </div>
+  </div>
+  <div style="">
+    <%= image_tag("soapbox_img.png", :class => "style_image") %>
+    </div>
+  <% end %>
+</section>

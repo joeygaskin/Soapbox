@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><% if current_user %><%= current_user.name %> - <% else %><% end %>Soapbox</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="mb-4 my-2 my-md-0 navbar-sh">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white">
+          <span class="my-0 mr-md-auto soapbox">soapbox</span>
+          <ul class="nav navbar-right">
+            <% if current_user %>
+            <li class="p-2 text-000" style="font-size: 13.5px; line-height: 2em;"><%= link_to (fa_icon "book", text:"View My Blog"), user_posts_path(current_user.username) %></li>
+            <li class="p-2 text-000" style="font-size: 13.5px; line-height: 2em;"><%= link_to "Edit My Profile", edit_user_path(current_user) %></li>
+            <li class="p-2" style="font-size: 13.5px; line-height: 2em;"><%= link_to "Log Out", logout_path %></li>
+            <li class="ml-3 btn btn-outline-primary"><%= link_to (fa_icon "edit", text:"New Post"), new_post_path(current_user.username) %></li>
+            <% else %>
+            <li class="p-2 text-dark" style="font-size: 13.5px; line-height: 2em;">Become a member</li>
+            <li class="p-2" style="font-size: 13.5px; line-height: 2em;"><%= link_to "Sign in", login_path %></li>
+            <li class="btn btn-outline-primary" style="margin-left: 10px;"><%= link_to "Get started", signup_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <%= yield %>
+  </body>
+</html>

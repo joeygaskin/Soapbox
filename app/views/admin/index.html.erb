@@ -1,0 +1,44 @@
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to "Log Out", logout_path %>
+<% else %>
+  <%= link_to "Sign Up", signup_path %> or
+  <%= link_to "Log In", login_path %>
+<% end %>
+<p id="notice"><%= notice %></p>
+<h1>We've missed you <%= current_user.username %>!</h1>
+<p>Lorem ipsum …</p>
+<% if current_user %>
+<p>
+  <% if current_user.avatar.attached? %>
+  <%= image_tag(current_user.avatar, class: "avatar") %>
+  <br>
+  <% else %>
+  <% end %>
+  <strong>Name:</strong>
+  <%= current_user.name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= current_user.username %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= current_user.bio %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+<%= link_to 'Edit', edit_user_path(current_user) %>
+<p>
+<%= link_to "Create Post", new_post_path(current_user.username) %>
+</p>
+<%= link_to "My Posts", user_posts_path(current_user.username) %>
+</p>
+<% else %>
+
+<% end %>
